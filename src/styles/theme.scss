@@ -1,0 +1,65 @@
+/* 
+  This file defines the light and dark theme color variables
+  using Bootstrap’s SCSS variables and custom values.
+  The themes switch based on the HTML attribute `data-bs-theme`.
+  Enjoy customizing your app’s look and feel!
+*/
+
+// Import Bootstrap functions and variables first
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+
+// Custom variables for backgrounds and borders
+$body-bg-light: #ccd0d3;
+$body-bg-dark: #1a1a2e;
+$card-bg-dark: #2a2a4a;
+$card-border-dark: #44446a;
+
+// Custom theme colors for light mode
+$custom-theme-colors-light: (
+  "app-bg": $body-bg-light,
+  "card-bg": #ffffff,
+  "text-color": #212529,
+  "purple-accent": #8a2be2,
+  "blue-accent": #0d6efd,
+);
+
+// Custom theme colors for dark mode
+$custom-theme-colors-dark: (
+  "app-bg": $body-bg-dark,
+  "card-bg": $card-bg-dark,
+  "text-color": #f8f9fa,
+  "purple-accent": #a252e0,
+  "blue-accent": #66b2ff,
+);
+
+// Light theme CSS variables controlled by [data-bs-theme="light"]
+html[data-bs-theme="light"] {
+  --bs-body-bg: #{$body-bg-light};
+  --bs-body-color: #{map-get($custom-theme-colors-light, "text-color")};
+  --bs-card-bg: #{map-get($custom-theme-colors-light, "card-bg")};
+  --bs-card-border-color: rgba(0, 0, 0, 0.125);
+  --bs-primary: #{map-get($custom-theme-colors-light, "blue-accent")};
+  --bs-secondary: #{map-get($custom-theme-colors-light, "purple-accent")};
+  --bs-text-opacity: 1;
+}
+
+// Dark theme CSS variables controlled by [data-bs-theme="dark"]
+html[data-bs-theme="dark"] {
+  --bs-body-bg: #{$body-bg-dark};
+  --bs-body-color: #{map-get($custom-theme-colors-dark, "text-color")};
+  --bs-card-bg: #{map-get($custom-theme-colors-dark, "card-bg")};
+  --bs-card-border-color: #{$card-border-dark};
+  --bs-primary: #{map-get($custom-theme-colors-dark, "blue-accent")};
+  --bs-secondary: #{map-get($custom-theme-colors-dark, "purple-accent")};
+  --bs-text-opacity: 1;
+
+  --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
+}
+
+// Import Bootstrap core styles and utilities
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Import custom styles
+@import "../custom.scss";

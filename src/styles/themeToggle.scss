@@ -1,0 +1,62 @@
+/* 
+  This is the styling for the theme toggle switch.
+  It handles the look and feel of the switch track and thumb,
+  with smooth transitions and dark mode support.
+*/
+
+.theme-toggle-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  .switch-track {
+    width: 132px;
+    height: 72px;
+    background-color: var(--bs-tertiary-bg);
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+  }
+
+  .switch-thumb {
+    width: 64px;
+    height: 58px;
+    padding: 0;
+    margin: 0 4px 2px 4px;
+    background-color: rgb(240, 160, 90);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgb(218 181 181);
+  }
+
+  .switch-icon {
+    font-size: 1.2rem;
+    color: white;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked + .switch-track {
+    background-color: rgba(25, 25, 52, 1);
+  }
+
+  input[type="checkbox"]:checked + .switch-track .switch-thumb {
+    transform: translateX(56px);
+    background-color: rgba(25, 25, 52, 1);
+  }
+
+  html[data-bs-theme="dark"] & {
+    .switch-track {
+      background-color: rgba(25, 25, 52, 1);
+    }
+  }
+}
