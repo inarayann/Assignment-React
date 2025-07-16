@@ -2,6 +2,15 @@
 
 A React project bootstrapped with Vite, featuring Bootstrap styling, React Router DOM for routing, and slick carousel integration. The project runs locally on port **http://localhost:3000**.
 
+
+## GIT Workflow
+
+ - Link / Clone url => https://github.com/inarayann/Assignment-React.git
+ -  go to repo directory , 
+ - check and run command `git status`, it will show you branch `main`,
+ - run command `git fetch` to get all new created branches
+ - run command `git checkout master` to fetch latest code
+ - then run command `npm install` or `yarn install`
 ---
 
 ## Features
@@ -62,4 +71,4 @@ yarn install
 
 - slick-carousel ^1.8.1
 
-- @types/bootstrap ^5.2.10
+- @types/bootstrap ^5.2.10 
