@@ -3,6 +3,13 @@
   Includes smooth transitions, active/inactive states,
   custom arrows, and responsive tweaks.
 */
+.pricing-card-container {
+  margin: auto auto;
+  height: calc(100vh - 62px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .carousel-container {
   width: 100%;
@@ -142,6 +149,7 @@
   justify-content: end;
   align-items: center;
   height: 70%;
+  padding: 0 16px 16px;
 }
 
 @media (max-width: 1000px) {

@@ -52,13 +52,13 @@ function Stepper() {
         >
 
           <div className="card-body">
-            <h5 className="card-title fw-bold mb-2">{step.title}</h5>
+            <h5 className="card-title fw-bold mb-2"><span className='hover-lift'>{step.title}</span> </h5>
             <p className="card-text small mb-1">{step.subtitle}</p>
             <div className='d-flex flex-row justify-content-between align-items-center my-2'>
-            <p className="card-text small text-muted">{step.location}</p>
+            <p className="card-text small text-muted ">{step.location}</p>
             {index === activeIndex && (
               <div className="">
-                <i className={`bi fs-4 icon-bg-camera ${step.iconClass}`}></i>
+                <i className={`bi fs-4 icon-bg-camera hover-lift ${step.iconClass}`}></i>
               </div>
             )}
                 </div>

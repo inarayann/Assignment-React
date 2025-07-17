@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import DashboardPage from './pages/DashboardPage'; // Import the new DashboardPage
 import Stepper from './pages/Stepper';
 import Pricing from './pages/Pricing';
+import RotatingCarousel from './pages/RotatingCarousel';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           <Route path="/timeline" element={<Stepper />} />
           <Route path="/features" element={<h1 className="text-center mt-5">Features Page</h1>} />
           <Route path="/cards" element={<Pricing/>} />
+          <Route path="/carousel" element={<RotatingCarousel/>} />
         </Routes>
       </main>
     </div>

@@ -3,6 +3,13 @@ import { Link, NavLink } from 'react-router-dom';
 import '../styles/navbar.scss';
 
 const Navbar: React.FC = () => {
+  const navItems = [
+    { name: 'Dashboard', path: '/', exact: true },
+    { name: 'Generate', path: '/timeline' },
+    { name: 'Pricing', path: '/cards' },
+    { name: 'Carousel', path: '/carousel' },
+  ];
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
       <div className="container-fluid">
@@ -20,22 +27,15 @@ const Navbar: React.FC = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/" end>
-                Dashboard
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/timeline">
-                Generate
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/cards">
-                Pricing
-              </NavLink>
-            </li>
+            {navItems.map((item) => (
+              <li className="nav-item px-2" key={item.path}>
+                <NavLink className="nav-link" to={item.path} end={item.exact ?? false}>
+                  {item.name}
+                </NavLink>
+              </li>
+            ))}
           </ul>
+
         </div>
       </div>
     </nav>

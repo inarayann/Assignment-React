@@ -1,5 +1,4 @@
 import type { ReactElement, ReactNode } from "react";
-
 export interface CardBlockProps {
   title: string;
   description?: string;
