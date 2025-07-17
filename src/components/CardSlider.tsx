@@ -130,7 +130,7 @@ const CustomPrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) =>
     >
       <span className="custom-arrow-icon">
         <svg width="20" height="46" viewBox="0 0 20 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M19.25 1.41675L0.75 23.0001L19.25 44.5834" stroke="#976FFF" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19.25 1.41675L0.75 23.0001L19.25 44.5834" stroke="white" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
       </span>

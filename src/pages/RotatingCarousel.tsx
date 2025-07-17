@@ -44,6 +44,11 @@ export default function RotatingCarousel() {
             transition: { duration: 0.8 },
         }),
     };
+const textVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
+};
 
 
     return (
@@ -71,13 +76,36 @@ export default function RotatingCarousel() {
                         }}
                     >
                         <div className="flex-space-col-between gradient-border">
-                            <p className="text-gradient-orange fs-62 hover-lift">{images[index].count}</p>
+                            <AnimatePresence mode="wait">
+  <motion.p
+    key={images[index].count}
+    className="text-gradient-orange fs-62 hover-lift"
+    initial="hidden"
+    animate="visible"
+    exit="exit"
+    variants={textVariants}
+  >
+    {images[index].count}
+  </motion.p>
+</AnimatePresence>
                             <div className="flex-center-col">
                                 <img
                                     src={images[index].url}
                                     alt=""
                                     className="img-carousel hover-lift mt-4" />
-                                <p className="fs-42 font-weight-bold hover-lift">{images[index].text}</p>
+                                    
+                                    <AnimatePresence mode="wait">
+  <motion.p
+    key={images[index].text}
+    className="fs-42 font-weight-bold hover-lift"
+    initial="hidden"
+    animate="visible"
+    exit="exit"
+    variants={textVariants}
+  >
+    {images[index].text}
+  </motion.p>
+</AnimatePresence>
                             </div>
                         </div>
                     </motion.div>
